@@ -1,0 +1,8 @@
+.showcase.reverse { column-gap: clamp(56px, 7vw, 120px); }
+.showcase.reverse .cards-demo { justify-self: start; transform: translateX(-105px); }
+.showcase.reverse .demo-card { box-sizing: border-box; height: 400px; }
+.showcase.reverse .demo-card i { margin-top: auto; }
+.showcase.reverse .cards-demo i img { width: 108px; height: 108px; object-fit: contain; display: block; }
+@media (max-width: 900px) {
+  .showcase.reverse .cards-demo { transform: none; }
+}

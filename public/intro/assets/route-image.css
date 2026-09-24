@@ -1,0 +1,25 @@
+/* Keep the route screenshot at its own aspect ratio; the image, not a fixed frame, controls height. */
+.app-route-shot {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: auto;
+  display: block;
+  overflow: hidden;
+  border-radius: 28px;
+  width: min(100%, 540px);
+  justify-self: end;
+}
+
+.app-route-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 28px;
+}
+
+@media (max-width: 600px) {
+  .app-route-shot { height: auto; width: 100%; }
+}
