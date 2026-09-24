@@ -61,6 +61,10 @@ const server = createServer(async (req, res) => {
         ? join(introRoot, "index.html")
         : safePath(introRoot, path.slice(1));
       response = file && await staticResponse(file);
+    } else if (path.startsWith("/_next/") || (path.startsWith("/projects/") && path !== "/projects/rally")) {
+      // The vinext worker renders HTML, but Render must serve the generated
+      // client chunks and project media directly from dist/client.
+      response = await staticResponse(safePath(clientRoot, path));
     } else {
       response = await worker.fetch(new Request(url, { method: req.method, headers: req.headers }), { ASSETS: { fetch: assetsFetch } }, { waitUntil() {}, passThroughOnException() {} });
     }
