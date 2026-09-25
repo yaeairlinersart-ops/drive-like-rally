@@ -48,8 +48,31 @@
       <div class="voice-visual"><div><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>右四<strong>紧接</strong>左三</p></div></div>
     </section>
 
-    <section class="download-reserve" id="download" aria-label="下载区域预留"></section>
+    <section class="download-section" id="download" aria-labelledby="download-title">
+      <div class="download-section-copy">
+        <span class="download-kicker">DOWNLOAD</span>
+        <h2 id="download-title">把山路领航装进手机</h2>
+        <p>Android 版本即将上线，点击下方按钮即可下载。</p>
+      </div>
+      <button class="android-download-button" type="button" aria-expanded="false" aria-controls="download-options">
+        <img src="assets/android-download-banner.png" alt="Download Android APK">
+      </button>
+      <div class="download-options" id="download-options" hidden>
+        <a class="download-option baidu" href="https://pan.baidu.com/s/1ud2-CxWvsiJEgPVCFVBwtQ?pwd=0805" target="_blank" rel="noopener noreferrer">百度网盘</a>
+        <a class="download-option quark" href="https://pan.quark.cn/s/0ce78717c1b1" target="_blank" rel="noopener noreferrer">夸克网盘</a>
+        <a class="download-option drive" href="https://drive.google.com/file/d/1puide0Py8EDu2kh-iIReqdVepUY4lqgD/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><strong>Google Drive</strong></a>
+      </div>
+    </section>
   </main>
   <footer><span>山路领航 · 概念产品展示</span><span>安全驾驶，不超速，不跨线</span></footer>
+  <script>
+    const apkButton = document.querySelector('.android-download-button');
+    const downloadOptions = document.querySelector('#download-options');
+    apkButton.addEventListener('click', () => {
+      const isOpen = apkButton.getAttribute('aria-expanded') === 'true';
+      apkButton.setAttribute('aria-expanded', String(!isOpen));
+      downloadOptions.hidden = isOpen;
+    });
+  </script>
 </body>
 </html>
