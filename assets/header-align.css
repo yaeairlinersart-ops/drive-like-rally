@@ -1,0 +1,11 @@
+.site-header {
+  padding-left: max(24px, calc((100% - 1320px) / 2));
+  padding-right: max(24px, calc((100% - 1320px) / 2));
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
